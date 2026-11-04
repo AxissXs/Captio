@@ -1,0 +1,30 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.captio.studio'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.captio.studio'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.0'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Installable community build; replace with a private keystore for distribution.
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.media3:media3-transformer:1.5.1'
+    implementation 'androidx.media3:media3-effect:1.5.1'
+    implementation 'androidx.media3:media3-common:1.5.1'
+}
