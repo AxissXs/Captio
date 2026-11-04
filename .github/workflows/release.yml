@@ -20,8 +20,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Build APK
-        run: gradle --no-daemon assembleRelease
+      - name: Test and build APK
+        run: gradle --no-daemon testDebugUnitTest assembleRelease
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
